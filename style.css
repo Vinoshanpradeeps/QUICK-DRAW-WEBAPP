@@ -1,0 +1,16 @@
+body{
+    background-color: black;
+    color: aqua;
+}
+#score{
+    font-size: 30px;
+    margin-left: -1290px;
+}
+#timer{
+    font-size: 30px;
+    float: right;
+    margin-right: 100px;
+}
+p{
+    font-size: 20px;
+}
