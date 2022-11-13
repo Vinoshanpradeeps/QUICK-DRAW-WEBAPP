@@ -11,9 +11,15 @@ timer_check = "";
 drawn_sketch = "";
 answer_holder = "";
 score = 0;
+sketch = Element_of_array;
 
+function setup(){
+    canvas = createCanvas(650, 300);
+    canvas.center();
+}
 function draw(){
     check_sketch();
+    drawn_sketch = document.getElementById("rusult_sketch").value;
     if(drawn_sketch == sketch){
         answer_holder = "set";
         score = score + 1;
@@ -24,8 +30,10 @@ function draw(){
 function check_sketch(){
     timer_counter++;
     document.getElementById("timer").innerHTML = "Timer : " + timer_counter;
+    console.log(timer_counter)
     if(timer_counter > 400){
         timer_counter = 0;
+        document.getElementById("timer").innerHTML = "Timer : " + timer_counter;
         timer_check = "completed";
     }
     if(timer_check == "completed" || answer_holder == "set"){
@@ -33,4 +41,10 @@ function check_sketch(){
         answer_holder = "";
         updateCanvas();
     }
+}
+
+function updateCanvas(){
+    background("white");
+    sketch = Element_of_array;
+    document.getElementsById("sketch").innerHTML = "Sketch to be drawn: " + sketch;
 }
